@@ -1,0 +1,16 @@
+.image-scroller {
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+}
+
+.image-scroller-track {
+    display: flex;
+    transition: transform 1s ease-in-out;  
+}
+
+.image {
+    width: 100%; 
+    height: auto;
+}
+  

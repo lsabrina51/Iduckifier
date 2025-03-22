@@ -3,13 +3,14 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;  /* Ensure header is above the content */
+    z-index: 20;
 }
 
 .left {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    padding-left: 1%;
 }
 
 .pixelify-sans {
@@ -33,6 +34,7 @@
 .right{
     display: flex;
     justify-content: flex-end;
+    padding-right: 1%;
 }
 
 .right ul {

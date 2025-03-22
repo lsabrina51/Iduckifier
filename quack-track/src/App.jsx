@@ -6,6 +6,8 @@ import './App.css'
 
 function App() {
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    const mapId = process.env.REACT_APP_GOOGLE_MAPS_MAP_ID;  // Access the Map ID from the environment variables
+
 
     return (
         <>
@@ -17,15 +19,17 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
-        {/* <APIProvider apiKey={apiKey}>
+        <APIProvider apiKey={apiKey}>
             <Map
                 style={{ width: '100vw', height: '100vh' }}
                 defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
                 defaultZoom={10}
+                mapId={mapId}  // Pass Map ID here
+
             >
-                <Marker position={{ lat: 37.7749, lng: -122.4194 }} />
+            <Marker position={{ lat: 37.7749, lng: -122.4194 }} />
             </Map>
-        </APIProvider> */}
+        </APIProvider>
         </>
     )
 }

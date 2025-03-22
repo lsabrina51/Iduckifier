@@ -17,7 +17,7 @@ export default function Header() {
       <nav className="right">
         <ul>
           <li><a href="/">About</a></li>
-          <li><a href="/">Team</a></li>
+          <li><a href="/upload-image">Team</a></li>
           <li><a href="/">Chat</a></li>
         </ul>
       </nav>

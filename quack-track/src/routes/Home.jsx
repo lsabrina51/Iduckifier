@@ -1,9 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from "../components/Header.jsx";
+import Sponsors from "../components/Sponsors.jsx";
 import ducks from "../assets/ducks.jpg";
 import "../css/home.css";
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/upload-image');
+  };
+  
   return (
     <div className="home-container">
       <Header />
@@ -15,7 +23,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-container">
-          
+          <Sponsors/>
+          <button onClick={handleClick}>Upload Duck Picture</button>
       </div>
     </div>
   );
