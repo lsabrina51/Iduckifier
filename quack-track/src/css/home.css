@@ -1,0 +1,62 @@
+.home-container {
+    position: relative;
+}
+
+.home-container .home-content {
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+}
+
+.home-container .image-background {
+    position: relative;
+    height: 100vh;  
+    width: 100%;    
+}
+
+.home-container .image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;    
+    left: 50%;   
+    transform: translate(-50%, -50%);  
+    color: white;  
+    text-align: center;
+    font-family: sans-serif;
+    z-index: 10;  
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    background-color: lightskyblue;
+    margin: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 3s steps(30) 1s 1 normal both;
+  }
+  
