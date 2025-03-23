@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from "../components/Header.jsx";
 import "../css/upload.css";
 
@@ -9,6 +8,8 @@ export default function Upload() {
     date: '',
     image: null
   });
+
+  const fileInputRef = useRef(null); 
 
   const handleChange = (e) => {
     const { name, value } = e.target; // Destructure name instead of address
@@ -31,7 +32,7 @@ export default function Upload() {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
-    return `${year}/${month}/${day}`;
+    return `${year}-${month}-${day}`;
   };
 
   const handleSubmit = (e) => {
@@ -45,6 +46,10 @@ export default function Upload() {
       date: '',
       image: null
     });  
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   return (
@@ -79,6 +84,7 @@ export default function Upload() {
           <div className="form-group">
             <label>Upload Image</label>
             <input
+              ref={fileInputRef} 
               type="file"
               name="image"
               accept="image/*"
