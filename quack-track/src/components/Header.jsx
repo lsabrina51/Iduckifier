@@ -14,13 +14,13 @@ export default function Header() {
         <img src={logo} alt="duck" />
         <a href="/" className="pixelify-sans">Quack Track</a>
       </div>
-      <nav className="right">
+      {/* <nav className="right">
         <ul>
           <li><a href="/">About</a></li>
           <li><a href="/upload-image">Team</a></li>
           <li><a href="/">Chat</a></li>
         </ul>
-      </nav>
+      </nav> */}
     </div>
   );
 }
