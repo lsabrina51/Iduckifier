@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Header from "../components/Header.jsx";
-import Map from "../components/DuckMap.jsx";
+import DuckMap from "../components/DuckMap.jsx";
 import "../css/upload.css";
 
 export default function Upload() {
@@ -13,10 +13,10 @@ export default function Upload() {
   const fileInputRef = useRef(null); 
 
   const handleChange = (e) => {
-    const { name, value } = e.target; // Destructure name instead of address
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value // Use name as the key dynamically
+      [name]: value
     });
   };
 
@@ -39,69 +39,55 @@ export default function Upload() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formattedDate = formData.date ? formatDateToYYYYMMDD(formData.date) : '';
-    const finalData = { ...formData, date: formattedDate };
-    console.log('Form submitted:', finalData);
-
-    
-    // start if added what ML model returns
-    const determinedDuckType = formData.duckType || "Mallard";
-
-    // calling global function to place the marker
-    if (window.placeAdvancedDuckMarker) {
-        window.placeAdvancedDuckMarker(determinedDuckType, "1600 Amphitheatre Parkway, Mountain View, CA");
-    } else {
-        console.error('Marker function is not available.');
-    }
-
-    //added error 
 
     setFormData({
       address: '',
       date: '',
       image: null
-    }); 
-    
+    });
 
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
+
+    window.location.href = "mapping.html"
   };
 
   return (
     <div>
       <Header/>
+      <div className="uploads-container">
       <div className="upload-container">
         <div className="title-container">
           <h2 className="title">Upload Duck Picture</h2>
         </div>
         <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <label>Address <span className="red">*</span></label>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <div className="form-group">
-          <label>Address <span className="red">*</span></label>
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Date <span className="red">*</span></label>
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
-        </div>
+            <label>Date <span className="red">*</span></label>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <div className="form-group">
             <label>Upload Image <span className="red">*</span></label>
             <input
-              ref={fileInputRef} 
+              ref={fileInputRef}
               type="file"
               name="image"
               accept="image/*"
@@ -114,8 +100,8 @@ export default function Upload() {
             Submit
           </button>
         </form>
-
-        <Map/>
+      </div>
+      <DuckMap />
       </div>
     </div>
   );

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Duck Map Testing</title>
+  <!-- Optional: link to your external CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ensure the map has some height or you won't see it */
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <!-- The container where the map will appear -->
+  <div id="map"></div>
+
+  <!-- Your custom JavaScript that contains the initMap() function -->
+  <script src="map_functions.js"></script>
+
+  <!-- Load the Google Maps JS API with your key and the callback function name -->
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBegsGvSCIxkZ9BQeVwtm9L1t55ehFg9tw&callback=initMap&libraries=marker&map_ids=a0f564d360319952">
+  </script>
+</body>
+</html>

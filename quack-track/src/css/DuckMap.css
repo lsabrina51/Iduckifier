@@ -1,0 +1,4 @@
+.duck-container {
+    width: 50%; /* Takes half the space */
+    max-width: 50%; /* Ensures it doesn’t grow beyond half */
+} 

@@ -10,7 +10,7 @@ function initMap() {
   });
 
   // example values
-  const duckType = "Rubber Duck"; // or any other duck type
+  const duckType = "Mallard"; // or any other duck type
   const address = "1600 Amphitheatre Parkway, Mountain View, CA";
 
   placeAdvancedDuckMarker(duckType, address);
