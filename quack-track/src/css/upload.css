@@ -1,0 +1,11 @@
+.rounded-button{
+    max-width: 50vw;
+    font-size: 3vw;
+    border-radius: 15px;
+    padding: 10px;
+
+  }
+
+  .overlay-text p{
+    background-color: transparent;
+  }

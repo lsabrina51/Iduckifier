@@ -4,7 +4,7 @@
     width: 100%; 
     overflow: hidden;
     position: relative;
-    height: 300px;
+    height: 100px;
 }
 
 .image-scroller-track {
@@ -17,7 +17,7 @@
 
 .image {
     width: auto; 
-    height: 300px;
+    max-height: 100px;
     object-fit: cover;
 }
 
