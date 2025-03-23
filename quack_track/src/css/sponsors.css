@@ -1,0 +1,31 @@
+.image-scroller {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+    height: 100px;
+}
+
+.image-scroller-track {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Adds a small gap between images */
+    width: calc(1151%); /* Adjust to account for gaps (20px * 4 gaps in the duplicated set) */
+    animation: scroll-left 15s linear infinite; /* Adjust time for desired speed */
+}
+
+.image {
+    width: auto; 
+    max-height: 100px;
+    object-fit: cover;
+}
+
+@keyframes scroll-left {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+}

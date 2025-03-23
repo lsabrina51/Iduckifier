@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Duck Map Testing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #map {
+      width: 50%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script src="map_functions.js"></script>
+
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap&libraries=marker&map_ids=a0f564d360319952">
+  </script>
+
+  <script>
+    // Initialize map
+    let map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 44.182205, lng: -84.506836 },
+        zoom: 7.5,
+        mapId: 'a0f564d360319952'
+      });
+      
+      // Get the address and date from the URL parameters
+      const params = new URLSearchParams(window.location.search);
+      const address = params.get('address');
+      const date = params.get('date');
+      
+      if (address) {
+        // Fetch duck type from file or database
+        fetch('duckType.txt')
+          .then(response => response.text())
+          .then(duckType => {
+            placeAdvancedDuckMarker(duckType.trim(), address);
+          })
+          .catch(error => {
+            console.error('Failed to load duck type:', error);
+          });
+      }
+    }
+
+    // Geocode the address and place the marker
+    function placeAdvancedDuckMarker(duckType, address) {
+      const geocoder = new google.maps.Geocoder();
+
+      geocoder.geocode({ address: address }, (results, status) => {
+        if (status === 'OK') {
+          const location = results[0].geometry.location;
+          map.setCenter(location);
+          map.setZoom(13);
+
+          // Create an advanced marker for the duck.
+          const marker = new google.maps.marker.AdvancedMarkerElement({
+            map: map,
+            position: location,
+            title: duckType,
+            content: getDuckMarkerContent(duckType)
+          });
+        } else {
+          console.error('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+
+    // Function to get the content of the marker based on duck type
+    function getDuckMarkerContent(duckType) {
+      if (duckType === 'Rubber Duck') {
+        const img = document.createElement('img');
+        img.src = "duck.svg";
+        img.style.width = "35px";
+        img.style.height = "35px";
+        return img;
+      }
+      // Add other conditions for different duck types...
+    }
+
+    window.initMap = initMap;
+    window.placeAdvancedDuckMarker = placeAdvancedDuckMarker;
+  </script>
+</body>
+</html>
