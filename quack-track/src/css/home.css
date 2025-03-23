@@ -55,8 +55,41 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    border-left: 3px solid white;
     border-right: 3px solid white;
     width: 0;
     animation: typing 3s steps(30) 1s 1 normal both;
-  }
-  
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.rounded-button {
+    background-color: #00c3ff; 
+    color: white;
+    border: none;
+    font-size: 75px;
+    border-radius: 30px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rounded-button:hover {
+    background-color: #007ae5;
+}
+
+.sponsor-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.sponsor-container h1{
+    color: black;
+    margin-left: 1%;
+    font-size: 50px;
+}

@@ -11,7 +11,7 @@ export default function Home() {
   const handleClick = () => {
     navigate('/upload-image');
   };
-  
+
   return (
     <div className="home-container">
       <Header />
@@ -19,12 +19,15 @@ export default function Home() {
         <img src={ducks} alt="ducks"/>
         <div className="overlay-text">
             <h1> Welcome to Quack Track</h1>
-            <p className="typing-animation">Your duck tracking begins here</p>
+            <p className="typing-animation">Your duck tracking begins here <span>&#8595;</span></p>
+            <div className="container">
+              <button onClick={handleClick} className="rounded-button"> Upload Duck Picture </button>
+            </div>
         </div>
       </div>
-      <div className="home-container">
-          <Sponsors/>
-          <button onClick={handleClick}>Upload Duck Picture</button>
+      <div className="sponsor-container">
+        <h1>Sponsors:</h1>
+        <Sponsors/>
       </div>
     </div>
   );
