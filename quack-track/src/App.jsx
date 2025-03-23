@@ -19,7 +19,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
-        <APIProvider apiKey={apiKey}>
+        {/* <APIProvider apiKey={apiKey}>
             <Map
                 style={{ width: '100vw', height: '100vh' }}
                 defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
@@ -29,7 +29,7 @@ function App() {
             >
             <Marker position={{ lat: 37.7749, lng: -122.4194 }} />
             </Map>
-        </APIProvider>
+        </APIProvider> */}
         </>
     )
 }
