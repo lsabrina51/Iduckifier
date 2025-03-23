@@ -1,4 +1,6 @@
 .home-container {
+    padding: 0;
+    margin: 0;
     position: relative;
 }
 
@@ -32,11 +34,23 @@
 }
 
 .overlay-text h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+
     font-size: 3rem;
     margin-bottom: 10px;
 }
 
 .overlay-text p {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+
     font-size: 1.5rem;
     background-color: lightskyblue;
     margin: 0;
@@ -70,6 +84,12 @@
 }
 
 .rounded-button {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+
     background-color: #00c3ff; 
     color: white;
     border: none;
