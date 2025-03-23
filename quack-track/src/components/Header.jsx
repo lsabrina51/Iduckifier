@@ -12,7 +12,7 @@ export default function Header() {
     <div className={`App-header ${isHomePage ? "home-page" : ""}`}>
       <div className="left">
         <img src={logo} alt="duck" />
-        <a href="/" className="pixelify-sans">Quack Track</a>
+        <a href="/">Quack Track</a>
       </div>
       {/* <nav className="right">
         <ul>

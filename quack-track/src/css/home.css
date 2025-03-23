@@ -4,9 +4,7 @@
     position: relative;
     
 }
-.home-header{
-    color: white; 
-}
+
 .home-container .home-content {
     position: relative;
     z-index: 5;
