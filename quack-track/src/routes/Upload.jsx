@@ -55,12 +55,14 @@ export default function Upload() {
   return (
     <div>
       <Header/>
-      <div className="container">
-        <form onSubmit={handleSubmit} className="form">
+      <div className="upload-container">
+        <div className="title-container">
           <h2 className="title">Upload Duck Picture</h2>
+        </div>
+        <form onSubmit={handleSubmit} className="form">
 
           <div className="form-group">
-          <label>Address</label>
+          <label>Address <span className="red">*</span></label>
           <input
             type="text"
             name="address"
@@ -71,7 +73,7 @@ export default function Upload() {
         </div>
 
         <div className="form-group">
-          <label>Date</label>
+          <label>Date <span className="red">*</span></label>
           <input
             type="date"
             name="date"
@@ -82,7 +84,7 @@ export default function Upload() {
         </div>
 
           <div className="form-group">
-            <label>Upload Image</label>
+            <label>Upload Image <span className="red">*</span></label>
             <input
               ref={fileInputRef} 
               type="file"
