@@ -18,7 +18,7 @@ export default function Home() {
       <div className="image-background">
         <img src={ducks} alt="ducks" class = "home-img"/>
         <div className="overlay-text">
-            <h1> Welcome to Quack Track</h1>
+            <h1 className = "home-header"> Welcome to Quack Track</h1>
             <p className="typing-animation">Your duck tracking begins here <span>&#8595;</span></p>
             <div className="container">
               <button onClick={handleClick} className="rounded-button"> Upload Duck Picture </button>

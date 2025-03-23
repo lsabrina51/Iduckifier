@@ -2,8 +2,11 @@
     padding: 0;
     margin: 0;
     position: relative;
+    
 }
-
+.home-header{
+    color: white; 
+}
 .home-container .home-content {
     position: relative;
     z-index: 5;
@@ -29,7 +32,7 @@
     transform: translate(-50%, -50%);  
     color: white;  
     text-align: center;
-    font-family: sans-serif;
+    width: 80vw;
     z-index: 10;  
 }
 
@@ -40,7 +43,7 @@
     font-style: normal;
     font-size: 50px;
 
-    font-size: 3rem;
+    font-size: 60px;
     margin-bottom: 10px;
 }
 
@@ -93,7 +96,7 @@
     background-color: #00c3ff; 
     color: white;
     border: none;
-    font-size: 75px;
+    font-size: 50px;
     border-radius: 30px; 
     cursor: pointer;
     transition: background-color 0.3s;
