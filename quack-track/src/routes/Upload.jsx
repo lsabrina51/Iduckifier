@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Header from "../components/Header.jsx";
+import Map from "../components/DuckMap.jsx";
 import "../css/upload.css";
 
 export default function Upload() {
@@ -41,11 +42,25 @@ export default function Upload() {
     const finalData = { ...formData, date: formattedDate };
     console.log('Form submitted:', finalData);
 
+    
+    // start if added what ML model returns
+    const determinedDuckType = formData.duckType || "Mallard";
+
+    // calling global function to place the marker
+    if (window.placeAdvancedDuckMarker) {
+        window.placeAdvancedDuckMarker(determinedDuckType, "1600 Amphitheatre Parkway, Mountain View, CA");
+    } else {
+        console.error('Marker function is not available.');
+    }
+
+    //added error 
+
     setFormData({
       address: '',
       date: '',
       image: null
-    });  
+    }); 
+    
 
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
@@ -99,6 +114,8 @@ export default function Upload() {
             Submit
           </button>
         </form>
+
+        <Map/>
       </div>
     </div>
   );
